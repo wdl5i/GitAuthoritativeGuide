@@ -5,5 +5,6 @@
     git config --globel user.email "xxx@xxx.com"
     ### 设置git别名
     sudo git config --system alias.ci commit
+    或 git config --global alias.ci commit
     
     
