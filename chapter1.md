@@ -1,4 +1,3 @@
-## 你在干什么
-    你fsdafsdaffsadfasdfa 
-## 不知道吗
-
+# GIT初使化
+## 创建版本库及第一次提交
+# GIT暂存区
