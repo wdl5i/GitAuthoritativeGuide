@@ -75,6 +75,8 @@ git clone algorithm algorithm-step-1
 
 ##修改不能直接提交吗？
 
+git log --stat 可以看到每次提交的文件变更统计
+
 
 
 
