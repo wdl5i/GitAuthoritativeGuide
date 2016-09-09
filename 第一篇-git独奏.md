@@ -151,7 +151,9 @@ git status -s
 
 **git diff --cached或者git diff --staged 显示暂存区与git版本库当前分支最新版本(HEAD)之间的差异**
 
-git如何检查
+git如何执行工作区状态扫描
+
+
 
 
 
