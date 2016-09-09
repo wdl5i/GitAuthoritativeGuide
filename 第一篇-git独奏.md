@@ -65,6 +65,12 @@ git config user.email
 
 git commit --amend --allow-empty --reset-author
 
+本地clone 
+
+cd /path/to/my/workspace
+
+git clone algorithm algorithm-step-1
+
 
 
 
