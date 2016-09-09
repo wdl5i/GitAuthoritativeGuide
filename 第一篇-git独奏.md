@@ -113,7 +113,7 @@ index e69de29..8654372 100644
 
 3. 执行git add welcome.txt后再执行git diff
 
-
+没有输出
 
 
 
