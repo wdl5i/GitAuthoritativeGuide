@@ -89,6 +89,8 @@ git 工作区，暂存区， 版本库概念：
 
 echo "Nice to meet you" >> welcome.txt
 
+
+
 1. 执行diff操作
 
 `$ git diff
@@ -104,7 +106,6 @@ index e69de29..8654372 100644
 @@ -0,0 +1 @@
 
 +Nice to meet you`
-
 
 2. 执行git status -s
 
@@ -149,9 +150,6 @@ git diff 显示工作目录与索引区文件之间的差异
 git diff --cached显示索引区与git仓库之间的差异
 
 git diff HEAD 显示工作目录与git仓库之间的差异 
-
-
-
 
 
 
