@@ -186,7 +186,9 @@ git ls-tree -l HEAD
 
 浏览暂存区中的目录树之前，首先清除工作区当前的改动，通过git clean -fd 命令清除当前工作区中没有加入到版本库中的文件和目录， 然后执行git checkout . ， 和暂存区内容刷新工作区
 
+git clean -fd
 
+git checkout .
 
 
 
