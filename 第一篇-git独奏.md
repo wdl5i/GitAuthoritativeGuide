@@ -198,6 +198,8 @@ git checkout .
 
 **将暂存区目录树写入GIT对象库中：git write-tree**
 
+显示已保存到GIT对象库中的GIT暂存区目录树：git ls-tree -l 暂存区目录树在GIT对象库中的ID
+
 
 
 
