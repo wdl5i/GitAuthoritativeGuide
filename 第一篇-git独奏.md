@@ -107,7 +107,9 @@ index e69de29..8654372 100644
 
 `
 
-执行git status操作
+执行git status -s
+
+
 
 
 
