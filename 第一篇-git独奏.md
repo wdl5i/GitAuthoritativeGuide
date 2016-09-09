@@ -89,7 +89,7 @@ git 工作区，暂存区， 版本库概念：
 
 echo "Nice to meet you" >> welcome.txt
 
-执行diff操作
+1. 执行diff操作
 
 `$ git diff
 
@@ -107,9 +107,11 @@ index e69de29..8654372 100644
 
 `
 
-执行git status -s
+2. 执行git status -s
 
  M welcome.txt
+
+
 
 
 
