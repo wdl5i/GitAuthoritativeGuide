@@ -141,7 +141,10 @@ M位于第二列，表示工作区当前的文件与牌中间任务--提交暂�
 
 echo "BYE-BYE" >> welcome.txt
 
-git status
+git status -s
+
+输出： MM welcome.txt
+
 
 
 
