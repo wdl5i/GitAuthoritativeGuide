@@ -109,7 +109,7 @@ index e69de29..8654372 100644
 
  M welcome.txt M前有一个空格
 
-3.执行git add welcome.txt后再执行git diff
+3. 执行git add welcome.txt后再执行git diff
 
 没有输出
 
