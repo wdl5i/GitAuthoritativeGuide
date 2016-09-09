@@ -79,11 +79,11 @@ git log --stat 可以看到每次提交的文件变更统计
 
 git 工作区，暂存区， 版本库概念：
 
-1. 工作区：就是你在电脑里能看到的目录。
+1. **工作区**：就是你在电脑里能看到的目录。
 
-2. 暂存区：英文叫stage, 或index。一般存放在"git目录"下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
+2. **暂存区**：英文叫stage, 或index。一般存放在"git目录"下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
 
-3. 版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库, HEAD指针
+3. **版本库**：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库, HEAD指针
 
 ![](/assets/2.jpg)
 
@@ -150,6 +150,8 @@ git diff 显示工作目录与暂存区(index, stage)文件之间的差异
 git diff HEAD 显示工作目录与git版本库当前分支最新版本（HEAD）之间的差异 
 
 git diff --cached或者git diff --staged 显示暂存区与git版本库当前分支最新版本(HEAD)之间的差异
+
+git如何检查
 
 
 
