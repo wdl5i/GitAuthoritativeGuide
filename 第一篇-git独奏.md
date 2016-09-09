@@ -200,6 +200,9 @@ git checkout .
 
 显示已保存到GIT对象库中的GIT暂存区目录树：git ls-tree -l 暂存区目录树在GIT对象库中的ID
 
+![](/assets/2.jpg)
+
+
 
 
 
