@@ -115,7 +115,8 @@ index e69de29..8654372 100644
 
 没有输出
 
-4. 执行git diff HEAD
+
+4.  执行git diff HEAD
 
 diff --git a/welcome.txt b/welcome.txt
 
