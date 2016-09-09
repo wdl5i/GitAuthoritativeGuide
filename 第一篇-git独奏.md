@@ -87,6 +87,27 @@ git 工作区，暂存区， 版本库概念：
 
 ![](/assets/2.jpg)
 
+echo "Nice to meet you" >> welcome.txt
+
+`$ git diff
+
+diff --git a/welcome.txt b/welcome.txt
+
+index e69de29..8654372 100644
+
+--- a/welcome.txt
+
++++ b/welcome.txt
+
+@@ -0,0 +1 @@
+
++Nice to meet you
+
+
+`
+
+
+
 
 
 
