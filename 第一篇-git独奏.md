@@ -194,6 +194,10 @@ git checkout .
 
 **显示暂存区中目录树：git ls-files -l -s**
 
+**将暂存区目录树写入GIT对象库中：git write-tree**
+
+
+
 
 
 
