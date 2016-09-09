@@ -204,6 +204,8 @@ git checkout .
 
 **尽量不要使用git commit -a， 因为这样暂存区就失去了存在的意义**
 
+git stash 
+
 
 
 
