@@ -145,9 +145,9 @@ git status -s
 
 输出： MM welcome.txt 即现在工作区与暂存区相比文件有改动，暂存区和版本库的最新版本相比文件有改动
 
-git diff 显示工作目录与索引区文件之间的差异
+git diff 显示工作目录与暂存区文件之间的差异
 
-git diff --cached显示索引区与git仓库之间的差异
+git diff --cached显示暂存区与git仓库之间的差异
 
 git diff HEAD 显示工作目录与git仓库之间的差异 
 
