@@ -180,7 +180,6 @@ git ls-tree -l HEAD
 
 100644 blob 8654372b58c7da093073c8b7d0881ce7a0bad803 17 welcome.txt
 
-
 -l参数表示显示文件大小
 
 第一列是文件的属性(r,w,x)
