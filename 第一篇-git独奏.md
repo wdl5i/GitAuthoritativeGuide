@@ -21,7 +21,8 @@
 ## 为什么根目录下面有一个.git目录
 
 mkdir a/b/c 依层次建立目录
-
+git rev-parse --git-dir 显示版本库.git目录所在位置
+git rev-parse --show-toplevel 显示工作区根目录
 
 
 
