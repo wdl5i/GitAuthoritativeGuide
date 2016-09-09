@@ -142,12 +142,13 @@ echo "BYE-BYE" >> welcome.txt
 git status -s
 
 输出： MM welcome.txt 即现在工作区与暂存区相比文件有改动，暂存区和版本库的最新版本相比文件有改动
+![](/assets/3.png)
 
 **git diff 显示工作目录与暂存区(index, stage)文件之间的差异**
 
 **git diff HEAD 显示工作目录与git版本库当前分支最新版本（HEAD）之间的差异** 
 
-**git diff --cached或者git diff --staged 显示暂存区与git版本库当前分支最新版本(HEAD)之间的差异**
+**git diff --cached (HEAD)或者git diff --staged (HEAD) 显示暂存区与git版本库当前分支最新版本(HEAD)之间的差异**
 
 **git如何执行工作区状态扫描？**
 
