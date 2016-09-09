@@ -169,7 +169,9 @@ git根据.git/index文件中记录的(用于跟踪工作区文件)时间戳，�
 
 6. 当执行git rm --cached <file>时，会直接从暂存区中删除文件，工作区不会改变
 
-7.当执行git checkout . 或git checkout --<file>时，会打暂存区全部文件或者指定文件替换工作区中的文件，因此这个操作很危险。
+7. 当执行git checkout . 或git checkout --<file>时，会打暂存区全部文件或者指定文件替换工作区中的文件，因此这个操作很危险。
+
+8. 当执行git checkout HEAD . 或git checkout HEAD <file>时， 会用HEAD指向的master分支中的全部或指定文件替换暂存区和工作区的文件，因此这个操作更危险。
 
 
 
