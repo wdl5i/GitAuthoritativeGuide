@@ -26,7 +26,7 @@ git rev-parse --show-toplevel 显示工作区根目录
 
 ##git config 命令的各项参数
 git config -e 打开当前git工作区的.git/config文件进行编辑
-git config -e --global 打开用户主目录下的.gitconfig文件进行编辑
+git config -e --global 打开用户主目录下的.gitconfig文件进行编辑，如/home/wdl/.gitconfig
 
 
 
