@@ -41,6 +41,7 @@ git config -e --system 打开系统级配置文件进行编辑，如/etc/gitconf
 ![](/assets/1.png)
 向配置文件test.ini中添加配置
 GIT_CONFIG=test.ini git config a.b.c.d "hello world"
+
 从配置文件test.ini中读取配置
 GIT_CONFIG=test.ini git config a.bc.d
 
