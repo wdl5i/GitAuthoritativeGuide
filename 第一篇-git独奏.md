@@ -111,7 +111,7 @@ index e69de29..8654372 100644
 
  M welcome.txt
 
-3. 执行git add welcome.txt
+3. 执行git add welcome.txt后再执行git diff
 
 
 
