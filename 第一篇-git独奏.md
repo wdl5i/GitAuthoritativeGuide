@@ -91,7 +91,7 @@ echo "Nice to meet you" >> welcome.txt
 
 1. 执行diff操作
 
-$ git diff
+`$ git diff
 
 diff --git a/welcome.txt b/welcome.txt
 
@@ -103,7 +103,7 @@ index e69de29..8654372 100644
 
 @@ -0,0 +1 @@
 
-+Nice to meet you
++Nice to meet you`
 
 2. 执行git status -s
 
