@@ -61,6 +61,7 @@ git config user.email
 
 测试提交：git commit --allow-empty -m "who does commit?" allow-empty允许没有对工作区文件修改时执行提交
 
+此时会发现，git要求设置用户姓名和email信息
 
 
 
