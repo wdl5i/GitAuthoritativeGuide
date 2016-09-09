@@ -25,6 +25,7 @@ git rev-parse --git-dir 显示版本库.git目录所在位置
 git rev-parse --show-toplevel 显示工作区根目录
 
 ##git config 命令的各项参数
+git的三个配置文件分别是版本库级别的配置文件， 用户全局级别的配置文件，系统级的配置文件，他们的优先级依次降低
 git config -e 打开当前git工作区的.git/config文件进行编辑
 git config -e --global 打开用户主目录下的.gitconfig文件进行编辑，如/home/wdl/.gitconfig
 git config -e --system 打开系统级配置文件进行编辑，如/etc/gitconfig
