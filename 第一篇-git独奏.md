@@ -192,6 +192,8 @@ git clean -fd
 
 git checkout .
 
+显示暂存区目录，用git ls-files -s
+
 
 
 
