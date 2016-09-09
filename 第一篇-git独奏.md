@@ -180,7 +180,7 @@ git根据.git/index文件中记录的(用于跟踪工作区文件)时间戳，�
 
 显示版本库中目录树：git ls-tree -l HEAD
 
-显示暂存区中目录树：git ls-files -s
+显示暂存区中目录树：git ls-files -l -s
 
 
 
