@@ -2,19 +2,19 @@
 
 ## 创建版本库及第一次提交
 
- 1. 配置当前用户名和邮箱地址：
+一. 配置当前用户名和邮箱地址：
 
  git config --global user.name "xxx"
 
  git config --globel user.email "xxx@xxx.com"
 
- 2. 设置git别名
+ 二. 设置git别名
 
  sudo git config --system alias.ci commit 或
 
  git config --global alias.ci commit
 
- 3. 命令行中开户颜色
+ 三. 命令行中开户颜色
 
  git config --global color.ui true
 
@@ -91,7 +91,7 @@ echo "Nice to meet you" >> welcome.txt
 
 
 
-1. 执行diff操作
+一. 执行diff操作
 
 `$ git diff
 
@@ -107,15 +107,15 @@ index e69de29..8654372 100644
 
 +Nice to meet you`
 
-2. 执行git status -s
+二. 执行git status -s
 
  M welcome.txt M前有一个空格
 
-3. 执行git add welcome.txt后再执行git diff
+三. 执行git add welcome.txt后再执行git diff
 
  没有输出
 
-4. 执行git diff HEAD
+四. 执行git diff HEAD
 
 diff --git a/welcome.txt b/welcome.txt
 
@@ -129,7 +129,7 @@ index e69de29..8654372 100644
 
 +Nice to meet you
 
-5. 执行git status -s 
+五. 执行git status -s 
 
 M welcome.txt 
 
@@ -137,7 +137,7 @@ M位于第一列行头，表示版本库中的文件与处于中间任务--提�
 
 M位于第二列，表示工作区当前的文件与处于中间任务--提交暂存区（stage, index中的文件相比有改动
 
-6. 继续修改welcome.txt后查看状态
+六. 继续修改welcome.txt后查看状态
 
 echo "BYE-BYE" >> welcome.txt
 
