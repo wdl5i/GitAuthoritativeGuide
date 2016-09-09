@@ -176,6 +176,10 @@ git根据.git/index文件中记录的(用于跟踪工作区文件)时间戳，�
 ##git diff魔法
 1. 工作区，暂存区和版本库的目录树浏览
 
+git ls-tree -l HEAD
+
+
+
 
 
 
