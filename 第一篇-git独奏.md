@@ -24,6 +24,10 @@ mkdir a/b/c 依层次建立目录
 git rev-parse --git-dir 显示版本库.git目录所在位置
 git rev-parse --show-toplevel 显示工作区根目录
 
+##git config 命令的各项参数
+git config -e 打开当前git工作区的.git/config文件进行编辑
+git config -e --global 打开用户主目录下的.gitconfig文件进行编辑
+
 
 
 
