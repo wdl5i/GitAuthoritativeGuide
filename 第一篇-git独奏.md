@@ -149,7 +149,7 @@ git diff 显示工作目录与暂存区(index, stage)文件之间的差异
 
 git diff HEAD 显示工作目录与git版本库当前分支最新版本（HEAD）之间的差异 
 
-git diff --cached或者git diff --staged 显示暂存区与git版本库当前分支最新版本之间的差异
+git diff --cached或者git diff --staged 显示暂存区与git版本库当前分支最新版本(HEAD)之间的差异
 
 
 
