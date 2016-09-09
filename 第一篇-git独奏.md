@@ -129,6 +129,10 @@ index e69de29..8654372 100644
 
 +Nice to meet you
 
+5.执行git status -s 
+
+
+
 
 
 
