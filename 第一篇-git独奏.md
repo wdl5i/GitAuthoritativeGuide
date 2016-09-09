@@ -45,6 +45,13 @@ GIT_CONFIG=test.ini git config a.b.c.d "hello world"
 从配置文件test.ini中读取配置
 GIT_CONFIG=test.ini git config a.bc.d
 ## 是谁完成的提交
+如果不设置git全局参数user.name user.email会怎么样？
+先清空用户参数
+git config --unset --global user.name
+git config --unset --global user.email
+再查看用户姓名和邮件信息
+git config user.name
+git config user.email
 
 
 
