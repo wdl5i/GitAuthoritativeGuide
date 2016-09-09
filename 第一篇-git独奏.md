@@ -44,6 +44,7 @@ GIT_CONFIG=test.ini git config a.b.c.d "hello world"
 
 从配置文件test.ini中读取配置
 GIT_CONFIG=test.ini git config a.bc.d
+## 是谁完成的提交
 
 
 
