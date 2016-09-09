@@ -143,7 +143,7 @@ echo "BYE-BYE" >> welcome.txt
 
 git status -s
 
-输出： MM welcome.txt 即现在工作区与暂存区相比文件有改动，暂存区和版本库相比文件有改动
+输出： MM welcome.txt 即现在工作区与暂存区相比文件有改动，暂存区和版本库的最新版本相比文件有改动
 
 
 
