@@ -131,6 +131,8 @@ index e69de29..8654372 100644
 
 5.执行git status -s 
 
+M welcome.txt
+
 
 
 
