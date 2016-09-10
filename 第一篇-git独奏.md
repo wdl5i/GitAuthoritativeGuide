@@ -208,7 +208,7 @@ git checkout .
 
 # GIT对象 #
 
-git log -l --pretty=raw 查看日志详细信息
+git log -l --pretty=raw 查看日志详细信息，包括parent值
 
 commit 22bbe022dbd2eaf2e9f7244f04cff8b30714f391： 本次提交的唯一标识
 tree 7da38bd484f518b2e9ef295b623623f9216b80c7 ： 本次提交所对应的目录树
@@ -217,10 +217,53 @@ author wdl5i <wdl5i@163.com> 1473417382 +0800
 committer wdl5i <wdl5i@163.com> 1473417382 +0800
 
 git cat-file sha1 ： 查看GIT对象ID详情  
-git cat-file -t sha1 : 查看GIT对象ID类型，包括commit, tree  
+git cat-file -t sha1 : 查看GIT对象ID类型，包括提交commit, 目录树tree， 文件内容(blob)  
 git cat-file -p sha1 : 根据sha1值，查看特定指交ID详情  
 
 这些对象都保存在.git/object目录下，ID的前2位作为目录名，后38位作为文件名
+
+![](/assets/4.png)
+
+Head与master的关系  
+在当前版本库中， HEAD, master, refs/for/master具有相同的指向。
+执行find .git -name HEAD -o -name master
+.git/HEAD
+.git/refs/heads/master
+.git/refs/remotes/origin/HEAD
+.git/refs/remotes/origin/master
+.git/logs/HEAD
+.git/logs/refs/heads/master
+.git/logs/refs/remotes/origin/HEAD
+.git/logs/refs/remotes/origin/master
+
+执行cat .git/HEAD
+ref: refs/heads/master 实际上指向.git/refs/heads/master
+执行cat .git/refs/heads/master
+ff2266a2ff65f19e3ece2540a5896649601d59fb 
+执行git cat-file -t ff2266a2ff65f19e3ece2540a5896649601d59fb
+commit 说明这个GIT ID代表一个提交
+执行git cat-file -p ff2266a2ff65f19e3ece2540a5896649601d59fb查看提交详情
+tree ce605fd127dd58d262df5f14cb06b8e095b66f81
+parent f00dd2c7e054831dbe0cef624471371bc1c742ee
+author wdl5i <wdl5i@163.com> 1473487338 +0800
+committer wdl5i <wdl5i@163.com> 1473487338 +0800
+HEAD, master指向最新提交，根据提交的parent属性，可以追踪整个提交历史  
+![](/assets/5.png)
+
+.git/refs是保存引用的命名空间，其中.git/refs/heads目录下的引用就是分支，对于分支，可以采用正规长格式表示法，即refs/heads/master, 也可以去掉前面两级目录直接用master来表示。
+显示引用对应的提交ID： 
+git rev-parse master
+git rev-parse refs/heads/master
+git rev-parse HEAD
+
+## 思考：SHA1哈希值到底是什么，是如何生成的？ ##
+commit提交的sha1生成算法：提交内容 + 提交信息大小 执行sha1
+blob文件内容的sha1生成算法： 文件内容 + 提交信息大小 执行sha1
+tree目录树的sha1竹成算法： 树内容 + 树内容大小 执行sha1
+
+为什么不用自增的方案来生成ID? 集中式管理系统可以保证ID唯一，但分布式不能保证
+
+# GIT重置 #
 
 
 
