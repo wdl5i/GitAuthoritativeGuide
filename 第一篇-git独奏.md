@@ -206,6 +206,25 @@ git checkout .
 
 保存当前工作进度： git stash 
 
+# GIT对象 #
+
+git log -l --pretty=raw 查看日志详细信息
+
+commit 22bbe022dbd2eaf2e9f7244f04cff8b30714f391： 本次提交的唯一标识
+tree 7da38bd484f518b2e9ef295b623623f9216b80c7 ： 本次提交所对应的目录树
+parent 2b22fd79fa216829bb90abda1024267e5396158e ： 上一次提交
+author wdl5i <wdl5i@163.com> 1473417382 +0800
+committer wdl5i <wdl5i@163.com> 1473417382 +0800
+
+git cat-file sha1 ： 查看GIT对象ID详情  
+git cat-file -t sha1 : 查看GIT对象ID类型，包括commit, tree  
+git cat-file -p sha1 : 根据sha1值，查看特定指交ID详情  
+
+这些对象都保存在.git/object目录下，ID的前2位作为目录名，后38位作为文件名
+
+
+
+
 
 
 
