@@ -265,6 +265,30 @@ tree目录树的sha1竹成算法： 树内容 + 树内容大小 执行sha1
 
 # GIT重置 #
 
+**可以使用reflog挽回错误的重置**  
+查看.git/logs/refs/heads/master， 这个文件记录了mater分支的变迁，最新的提交追加到末  
+显示最新的前5次提交日志：git reflog show master | head 5  
+重置master为两次改变之前的值： git reset --hard master@{2}  
+
+**git reset命令的用法**
+以下的commit是可选项， 可以使用引用或者commitId, 省略的话相当于使用HEAD指向作为commitId  
+用法一： git reset [-q] [<commit>] [--] <paths>...  
+不会重置引用， 更不会更新工作区， 只是使用提交状态下的文件替换掉暂存区中的文件，如git reset HEAD 文件路径 相当于取消之前执行的git add 文件路径命令时改变的暂存区  
+用法二： git reset [--soft | --mixed | --hard | -- merge | --keep] [-q] [<commit>]  
+会重置引用，根据不同的参数选择，对暂存区和工作区进行重置
+![](/assets/6.png)
+--hard, 会执行上图所示1，2，3全部动作，即：
+1. 替换引用的指向
+2. 替换暂存区， 暂存区的内容与引用指向的目录树一致
+3. 替换工作区， 工作区的内容和暂存区，HEAD所指向的目录树内容一致  
+--soft, 会执行上图所示1操作，只替换引用的指向， 不改变暂存区和工作区内容  
+--mixed或者不使用参数，会执行1，2动作，替换引用的指向，重置暂存区，不会改变工作区  
+git reset, get reset HEAD : 仅用HEAD指向的目录树重置暂存区  
+git reset --filename, git reset HEAD filename: 仅将文件filename的改动撤出暂存区，暂存区其他文件不变
+HEAD^　：　表示HEAD指针的上一次提交
+
+# GIT捡出 #
+
 
 
 
