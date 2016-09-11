@@ -289,7 +289,18 @@ HEAD^　：　表示HEAD指针的上一次提交
 HEAD^^　：　表示HEAD^指针的上一次提交
 
 # GIT捡出 #
-
+1.$ git rev-parse master  git rev-parse HEAD 查看master HEAD的commitID
+30a7e66fc59c70cc4ee77c3041f0af5683b80298
+2.git checkout 30a7e66fc59c70cc4ee77c3041f0af5683b80298^ 将HEAD指向上一次提交  
+3.cat .git/HEAD HEAD指针由指向master变成指向mater的上一次提交
+f2e0a91198b7b7433a6d7bf7d57da7ed2743a016  
+4.git reflog -1 记录HEAD指针的变迁记录
+f2e0a91 HEAD@{0}: checkout: moving from master to 30a7e66^
+5.git rev-parse HEAD master 查看HEAD master指向的commitID
+f2e0a91198b7b7433a6d7bf7d57da7ed2743a016
+30a7e66fc59c70cc4ee77c3041f0af5683b80298
+6.touch detached-commit.txt git add detached-commit.txt 再作一次修改  
+7.git commit -m "commit in detached HEAD mode" 提交
 
 
 
