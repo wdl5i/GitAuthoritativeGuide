@@ -170,7 +170,7 @@ git根据.git/index文件中记录的(用于跟踪工作区文件)时间戳，�
 
 6. 当执行git rm --cached <file>时，会直接从暂存区中删除文件，工作区不会改变
 
-7. 当执行git checkout . 或git checkout --<file>时，会打暂存区全部文件或者指定文件替换工作区中的文件，因此这个操作很危险。
+7. 当执行git checkout . 或git checkout --<file>时，会用暂存区全部文件或者指定文件替换工作区中的文件，因此这个操作很危险。
 
 8. 当执行git checkout HEAD . 或git checkout HEAD <file>时， 会用HEAD指向的master分支中的全部或指定文件替换暂存区和工作区的文件，因此这个操作更危险。
 
@@ -285,7 +285,8 @@ tree目录树的sha1竹成算法： 树内容 + 树内容大小 执行sha1
 --mixed或者不使用参数，会执行1，2动作，替换引用的指向，重置暂存区，不会改变工作区  
 git reset, get reset HEAD : 仅用HEAD指向的目录树重置暂存区  
 git reset --filename, git reset HEAD filename: 仅将文件filename的改动撤出暂存区，暂存区其他文件不变
-HEAD^　：　表示HEAD指针的上一次提交
+HEAD^　：　表示HEAD指针的上一次提交  
+HEAD^^　：　表示HEAD^指针的上一次提交
 
 # GIT捡出 #
 
