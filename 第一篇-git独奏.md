@@ -309,8 +309,8 @@ git commit -m "commit in detached HEAD mode"
 7.`cat .git/HEAD`  
 83a5f13e558b78d3c43161b1ad50402a7165711c  
 8.`git log --graph --pretty=oneline`   
-* 83a5f13e558b78d3c43161b1ad50402a7165711c commit in detached HEAD mode    
-* 0ff6654e5b5c607a1356a94390b1871df8af4901 hello world    
+`* 83a5f13e558b78d3c43161b1ad50402a7165711c commit in detached HEAD mode`    
+`* 0ff6654e5b5c607a1356a94390b1871df8af4901 hello world`    
 9.`git checkout master`  
 10.`cat .git/HEAD`  
 ref: refs/heads/master  
