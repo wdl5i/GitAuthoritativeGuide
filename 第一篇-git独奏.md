@@ -328,7 +328,7 @@ new file mode 100644
 index 0000000..e69de29
 </pre>
 ## 挽救分离的指针 ##
-**使用命令merge**
+**使用命令merge**  
 1.确认当前处于master分支  
  `git branch -v`    
 `* master 7c4446f bye`   
