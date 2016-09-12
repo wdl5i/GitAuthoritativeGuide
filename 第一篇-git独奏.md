@@ -310,7 +310,7 @@ git commit -m "commit in detached HEAD mode"
 83a5f13e558b78d3c43161b1ad50402a7165711c  
 8.`git log --graph --pretty=oneline`  
 * 83a5f13e558b78d3c43161b1ad50402a7165711c commit in detached HEAD mode  
-* 0ff6654e5b5c607a1356a94390b1871df8af4901 hello world
+* 0ff6654e5b5c607a1356a94390b1871df8af4901 hello world  
 9.`git checkout master`  
 10.`cat .git/HEAD`  
 ref: refs/heads/master  
@@ -330,18 +330,18 @@ index 0000000..e69de29
 ## 挽救分离的指针 ##
 **使用命令merge**
 1.确认当前处于master分支  
- `git branch -v`  
-* master 7c4446f bye  
-2.执行合并操作  
-`git merge 83a5f13e558b78d3c43161b1ad50402a7165711c` 
+ `git branch -v`    
+* master 7c4446f bye   
+2.执行合并操作    
+`git merge 83a5f13e558b78d3c43161b1ad50402a7165711c`   
 <pre>
 Merge made by the 'recursive' strategy.
  detached-commit.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 detached-commit.txt
-</pre>  
-3.查看日志  
-`git log --graph --pretty=oneline`
+</pre>    
+3.查看日志    
+`git log --graph --pretty=oneline`  
 <pre>
 *   062fe2f2f23d4ad4ed7c7cbd547ecfef17cfb2ce Merge commit '83a5f13e558b78d3c43161b1ad50402a7165711c'
 |\
