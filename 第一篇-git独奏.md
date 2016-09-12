@@ -299,9 +299,70 @@ f2e0a91198b7b7433a6d7bf7d57da7ed2743a016
 f2e0a91 HEAD@{0}: checkout: moving from master to 30a7e66^  
 5.`git rev-parse HEAD master` 查看HEAD master指向的commitID
 f2e0a91198b7b7433a6d7bf7d57da7ed2743a016
-30a7e66fc59c70cc4ee77c3041f0af5683b80298
-6.`touch detached-commit.txt git add detached-commit.txt` 再作一次修改  
-7.`git commit -m "commit in detached HEAD mode"` 提交
+30a7e66fc59c70cc4ee77c3041f0af5683b80298  
+6.提交
+<pre>
+touch detached-commit.txt 
+git add detached-commit.txt 
+git commit -m "commit in detached HEAD mode" 
+</pre>
+7.`cat .git/HEAD`  
+83a5f13e558b78d3c43161b1ad50402a7165711c  
+8.`git log --graph --pretty=oneline`  
+* 83a5f13e558b78d3c43161b1ad50402a7165711c commit in detached HEAD mode  
+* 0ff6654e5b5c607a1356a94390b1871df8af4901 hello world
+9.`git checkout master`  
+10.`cat .git/HEAD`  
+ref: refs/heads/master  
+11.ls  
+welcome.txt 新添加的detached.txt已经遗失  
+12.`git log --graph --pretty=oneline`  
+13.`git show 83a5f13e558b78d3c43161b1ad50402a7165711c` 为新添加文件时的commitId, s可见该次提次仍存在于版本库中    
+<pre>
+commit 83a5f13e558b78d3c43161b1ad50402a7165711c
+Author: wdl5i <wdl5i@163.com>
+Date:   Mon Sep 12 23:53:30 2016 +0800
+commit in detached HEAD mode
+diff --git a/detached-commit.txt b/detached-commit.txt
+new file mode 100644
+index 0000000..e69de29
+</pre>
+## 挽救分离的指针 ##
+**使用命令merge**
+1.确认当前处于master分支  
+ `git branch -v`  
+* master 7c4446f bye  
+2.执行合并操作  
+`git merge 83a5f13e558b78d3c43161b1ad50402a7165711c` 
+<pre>
+Merge made by the 'recursive' strategy.
+ detached-commit.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 detached-commit.txt
+</pre>  
+3.查看日志  
+`git log --graph --pretty=oneline`
+<pre>
+*   062fe2f2f23d4ad4ed7c7cbd547ecfef17cfb2ce Merge commit '83a5f13e558b78d3c43161b1ad50402a7165711c'
+|\
+| * 83a5f13e558b78d3c43161b1ad50402a7165711c commit in detached HEAD mode
+* | 7c4446fbe9d7b24e0c461c2baabfb9a036935fc9 bye
+|/
+* 0ff6654e5b5c607a1356a94390b1871df8af4901 hello world
+</pre>  
+4.仔细查看提交,会发现这个提交有两个父提交 
+ `git cat-file -p HEAD`
+<pre>
+tree b20372dff50c81cdb683d71ed072c025caed4e8f
+parent 7c4446fbe9d7b24e0c461c2baabfb9a036935fc9
+parent 83a5f13e558b78d3c43161b1ad50402a7165711c
+author wdl5i <wdl5i@163.com> 1473696939 +0800
+committer wdl5i <wdl5i@163.com> 1473696939 +0800
+
+Merge commit '83a5f13e558b78d3c43161b1ad50402a7165711c'
+</pre>
+## 深入理解git checkout命令 ##
+
 
 
 
