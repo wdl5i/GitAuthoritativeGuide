@@ -35,23 +35,20 @@ git config -e --global 打开用户主目录下的.gitconfig文件进行编辑�
 
 git config -e --system 打开系统级配置文件进行编辑，如/etc/gitconfig
 
-读取，修改配置文件中的指定项
-读取git config <section>.<key> 如git config core.bare 
-修改git config <section>.<key> value 如git config core.bare true
-![](/assets/1.png)
+读取，修改配置文件中的指定项  
+读取`git config <section>.<key> 如git config core.bare`  
+修改`git config <section>.<key> value 如git config core.bare true`
+![](/assets/1.png)  
 向配置文件test.ini中添加配置
-GIT_CONFIG=test.ini git config a.b.c.d "hello world"
 
-从配置文件test.ini中读取配置
-GIT_CONFIG=test.ini git config a.bc.d
+    GIT_CONFIG=test.ini git config a.b.c.d "hello world"
+从配置文件test.ini中读取配置  
+    `GIT_CONFIG=test.ini git config a.bc.d`
 ## 是谁完成的提交
-如果不设置git全局参数user.name user.email会怎么样？
-
-先清空用户参数
-
-git config --unset --global user.name
-
-git config --unset --global user.email
+如果不设置git全局参数user.name user.email会怎么样？  
+先清空用户参数  
+    `git config --unset --global user.name`  
+   `git config --unset --global user.email`
 
 再查看用户姓名和邮件信息
 
@@ -91,19 +88,19 @@ echo "Nice to meet you" >> welcome.txt
 
 一. 执行diff操作
 
-`$ git diff
+$ git diff 输出：
 
-diff --git a/welcome.txt b/welcome.txt
-
-index e69de29..8654372 100644
-
---- a/welcome.txt
-
-+++ b/welcome.txt
-
-@@ -0,0 +1 @@
-
-+Nice to meet you`
+    diff --git a/welcome.txt b/welcome.txt
+    
+    index e69de29..8654372 100644
+    
+    --- a/welcome.txt
+    
+    +++ b/welcome.txt
+    
+    @@ -0,0 +1 @@
+    
+    +Nice to meet you
 
 二. 执行git status -s
 
@@ -115,17 +112,17 @@ index e69de29..8654372 100644
 
 四. 执行git diff HEAD
 
-diff --git a/welcome.txt b/welcome.txt
-
-index e69de29..8654372 100644
-
---- a/welcome.txt
-
-+++ b/welcome.txt
-
-@@ -0,0 +1 @@
-
-+Nice to meet you
+    diff --git a/welcome.txt b/welcome.txt
+    
+    index e69de29..8654372 100644
+    
+    --- a/welcome.txt
+    
+    +++ b/welcome.txt
+    
+    @@ -0,0 +1 @@
+    
+    +Nice to meet you
 
 五. 执行git status -s 
 
@@ -172,7 +169,7 @@ git根据.git/index文件中记录的(用于跟踪工作区文件)时间戳，�
 
 7. 当执行git checkout . 或git checkout --<file>时，会用暂存区全部文件或者指定文件替换工作区中的文件，因此这个操作很危险。
 
-8. 当执行git checkout HEAD . 或git checkout HEAD <file>时， 会用HEAD指向的master分支中的全部或指定文件替换暂存区和工作区的文件，因此这个操作更危险。
+8. 当执行git checkout HEAD . 或git checkout master <file>时， 会用HEAD指向的master分支中的全部或指定文件替换暂存区和工作区的文件，因此这个操作更危险。
 
 ##git diff魔法
 
@@ -225,41 +222,43 @@ git cat-file -p sha1 : 根据sha1值，查看特定指交ID详情
 ![](/assets/4.png)
 
 Head与master的关系  
-在当前版本库中， HEAD, master, refs/for/master具有相同的指向。
-执行find .git -name HEAD -o -name master
-.git/HEAD
-.git/refs/heads/master
-.git/refs/remotes/origin/HEAD
-.git/refs/remotes/origin/master
-.git/logs/HEAD
-.git/logs/refs/heads/master
-.git/logs/refs/remotes/origin/HEAD
-.git/logs/refs/remotes/origin/master
+在当前版本库中， HEAD, master, refs/for/master具有相同的指向。  
+执行find .git -name HEAD -o -name master  
+`.git/HEAD`  
+`.git/refs/heads/master`  
+`.git/refs/remotes/origin/HEAD`  
+`.git/refs/remotes/origin/master`
+`.git/logs/HEAD`  
+`.git/logs/refs/heads/master`  
+`.git/logs/refs/remotes/origin/HEAD`  
+`.git/logs/refs/remotes/origin/master`
 
 执行cat .git/HEAD
-ref: refs/heads/master 实际上指向.git/refs/heads/master
-执行cat .git/refs/heads/master
+ref: refs/heads/master 实际上指向.git/refs/heads/master  
+执行cat .git/refs/heads/master  
 ff2266a2ff65f19e3ece2540a5896649601d59fb 
 执行git cat-file -t ff2266a2ff65f19e3ece2540a5896649601d59fb
-commit 说明这个GIT ID代表一个提交
-执行git cat-file -p ff2266a2ff65f19e3ece2540a5896649601d59fb查看提交详情
+commit 说明这个GIT ID代表一个提交  
+执行git cat-file -p ff2266a2ff65f19e3ece2540a5896649601d59fb查看提交详情  
+<pre>
 tree ce605fd127dd58d262df5f14cb06b8e095b66f81
 parent f00dd2c7e054831dbe0cef624471371bc1c742ee
 author wdl5i <wdl5i@163.com> 1473487338 +0800
 committer wdl5i <wdl5i@163.com> 1473487338 +0800
+</pre>
 HEAD, master指向最新提交，根据提交的parent属性，可以追踪整个提交历史  
 ![](/assets/5.png)
 
 .git/refs是保存引用的命名空间，其中.git/refs/heads目录下的引用就是分支，对于分支，可以采用正规长格式表示法，即refs/heads/master, 也可以去掉前面两级目录直接用master来表示。
-显示引用对应的提交ID： 
-git rev-parse master
-git rev-parse refs/heads/master
-git rev-parse HEAD
+显示引用对应的提交ID：  
+git rev-parse master  
+git rev-parse refs/heads/master  
+git rev-parse HEAD  
 
 ## 思考：SHA1哈希值到底是什么，是如何生成的？ ##
-commit提交的sha1生成算法：提交内容 + 提交信息大小 执行sha1
-blob文件内容的sha1生成算法： 文件内容 + 提交信息大小 执行sha1
-tree目录树的sha1竹成算法： 树内容 + 树内容大小 执行sha1
+commit提交的sha1生成算法：提交内容 + 提交信息大小 执行sha1  
+blob文件内容的sha1生成算法： 文件内容 + 提交信息大小 执行sha1  
+tree目录树的sha1竹成算法： 树内容 + 树内容大小 执行sha1  
 
 为什么不用自增的方案来生成ID? 集中式管理系统可以保证ID唯一，但分布式不能保证
 
@@ -272,35 +271,37 @@ tree目录树的sha1竹成算法： 树内容 + 树内容大小 执行sha1
 
 **git reset命令的用法**
 以下的commit是可选项， 可以使用引用或者commitId, 省略的话相当于使用HEAD指向作为commitId  
-用法一： git reset [-q] [<commit>] [--] <paths>...  
+用法一： `git reset [-q] [<commit>] [--] <paths>...`  
 不会重置引用， 更不会更新工作区， 只是使用提交状态下的文件替换掉暂存区中的文件，如git reset HEAD 文件路径 相当于取消之前执行的git add 文件路径命令时改变的暂存区  
-用法二： git reset [--soft | --mixed | --hard | -- merge | --keep] [-q] [<commit>]  
+用法二： <pre>
+git reset [--soft | --mixed | --hard | -- merge | --keep] [-q][<commit>]
+</pre>  
 会重置引用，根据不同的参数选择，对暂存区和工作区进行重置
 ![](/assets/6.png)
---hard, 会执行上图所示1，2，3全部动作，即：
-1. 替换引用的指向
-2. 替换暂存区， 暂存区的内容与引用指向的目录树一致
-3. 替换工作区， 工作区的内容和暂存区，HEAD所指向的目录树内容一致  
---soft, 会执行上图所示1操作，只替换引用的指向， 不改变暂存区和工作区内容  
---mixed或者不使用参数，会执行1，2动作，替换引用的指向，重置暂存区，不会改变工作区  
-git reset, get reset HEAD : 仅用HEAD指向的目录树重置暂存区  
-git reset --filename, git reset HEAD filename: 仅将文件filename的改动撤出暂存区，暂存区其他文件不变
-HEAD^　：　表示HEAD指针的上一次提交  
-HEAD^^　：　表示HEAD^指针的上一次提交
+--hard, 会执行上图所示1，2，3全部动作，即：  
+1. 替换引用的指向  
+2. 替换暂存区， 暂存区的内容与引用指向的目录树一致  
+3. 替换工作区， 工作区的内容和暂存区，HEAD所指向的目录树内容一致    
+--soft, 会执行上图所示1操作，只替换引用的指向， 不改变暂存区和工作区内容    
+--mixed或者不使用参数，会执行1，2动作，替换引用的指向，重置暂存区，不会改变工作区    
+git reset, get reset HEAD : 仅用HEAD指向的目录树重置暂存区    
+git reset --filename, git reset HEAD filename: 仅将文件filename的改动撤出暂存区，暂存区其他文件不变  
+HEAD^　：　表示HEAD指针的上一次提交    
+HEAD^^　：　表示HEAD^指针的上一次提交  
 
 # GIT捡出 #
-1.$ git rev-parse master  git rev-parse HEAD 查看master HEAD的commitID
-30a7e66fc59c70cc4ee77c3041f0af5683b80298
-2.git checkout 30a7e66fc59c70cc4ee77c3041f0af5683b80298^ 将HEAD指向上一次提交  
-3.cat .git/HEAD HEAD指针由指向master变成指向mater的上一次提交
+1.`$ git rev-parse master  git rev-parse HEAD` 查看master HEAD的commitID
+30a7e66fc59c70cc4ee77c3041f0af5683b80298  
+2`.git checkout 30a7e66fc59c70cc4ee77c3041f0af5683b80298^` 将HEAD指向上一次提交  
+3.`cat .git/HEAD` HEAD指针由指向master变成指向mater的上一次提交
 f2e0a91198b7b7433a6d7bf7d57da7ed2743a016  
-4.git reflog -1 记录HEAD指针的变迁记录
-f2e0a91 HEAD@{0}: checkout: moving from master to 30a7e66^
-5.git rev-parse HEAD master 查看HEAD master指向的commitID
+4.`git reflog -1` 记录HEAD指针的变迁记录  
+f2e0a91 HEAD@{0}: checkout: moving from master to 30a7e66^  
+5.`git rev-parse HEAD master` 查看HEAD master指向的commitID
 f2e0a91198b7b7433a6d7bf7d57da7ed2743a016
 30a7e66fc59c70cc4ee77c3041f0af5683b80298
-6.touch detached-commit.txt git add detached-commit.txt 再作一次修改  
-7.git commit -m "commit in detached HEAD mode" 提交
+6.`touch detached-commit.txt git add detached-commit.txt` 再作一次修改  
+7.`git commit -m "commit in detached HEAD mode"` 提交
 
 
 
