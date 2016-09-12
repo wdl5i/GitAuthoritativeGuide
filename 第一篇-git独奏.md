@@ -331,7 +331,7 @@ index 0000000..e69de29
 **使用命令merge**
 1.确认当前处于master分支  
  `git branch -v`    
-* master 7c4446f bye   
+`* master 7c4446f bye`   
 2.执行合并操作    
 `git merge 83a5f13e558b78d3c43161b1ad50402a7165711c`   
 <pre>
@@ -350,8 +350,8 @@ Merge made by the 'recursive' strategy.
 |/
 * 0ff6654e5b5c607a1356a94390b1871df8af4901 hello world
 </pre>  
-4.仔细查看提交,会发现这个提交有两个父提交 
- `git cat-file -p HEAD`
+4.仔细查看提交,会发现这个提交有两个父提交  
+ `git cat-file -p HEAD`  
 <pre>
 tree b20372dff50c81cdb683d71ed072c025caed4e8f
 parent 7c4446fbe9d7b24e0c461c2baabfb9a036935fc9
