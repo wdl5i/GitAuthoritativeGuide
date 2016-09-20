@@ -25,8 +25,8 @@ git的三个配置文件分别是版本库级别的配置文件， 用户全局�
 `git config -e --system` 打开系统级配置文件进行编辑，如/etc/gitconfig  
 读取，修改配置文件中的指定项  
 读取`git config <section>.<key> 如git config core.bare`  
-修改`git config <section>.<key> value 如git config core.bare true`
-![](/assets/1.png)  
+修改`git config <section>.<key> value 如git config core.bare true`  
+![](http://i.imgur.com/ZUOe2nh.png)  
 向配置文件test.ini中添加配置:  
 <pre>
 GIT_CONFIG=test.ini 
@@ -102,8 +102,7 @@ M welcome.txt
 `echo "BYE-BYE" >> welcome.txt`  
 `git status -s`  
 输出： MM welcome.txt 即现在工作区与暂存区相比文件有改动，暂存区和版本库的最新版本相比文件有改动
-![](/assets/3.png)
-
+![](http://i.imgur.com/q17yWwb.png)
 **git diff 显示工作目录与暂存区(index, stage)文件之间的差异**  
 **git diff HEAD 显示工作目录与git版本库当前分支最新版本（HEAD）之间的差异**  
 **git diff --cached (HEAD)或者git diff --staged (HEAD) 显示暂存区与git版本库当前分支最新版本(HEAD)之间的差异**  
@@ -111,7 +110,7 @@ M welcome.txt
 **git如何执行工作区状态扫描？**  
 git根据.git/index文件中记录的(用于跟踪工作区文件)时间戳，文件长度等信息判断工作区文件是否改变，若工作区文件时间戳改变了，说明文件内容可能发生变化，需要打开文件，读取文件内容后与更改前的原始文件比较，最终判断文件是否发生变化，再更新该文件新的时间戳到.git/index中。  
 .git/index就是一个包含文件索引的目录树，像一个虚拟的工作区，记录了文件名和文件的状态信息(时间戳和文件长度等)。文件内容都没有存储在其中，而是保存在git对象库，即.git/objects目录中，文件索引建立了文件与对象库中对象实体的对应。 
-![](/assets/2.jpg)
+![](http://i.imgur.com/qdUILqG.jpg)
 1. 图中左侧为工作区，右侧为版本库，版本库中标识为index的部分是暂存区，标识为Master的是master分支所代表的目录树  
 2. HEAD实际中是指向master分支的一个游标，所以图示中的命令中出现HEAD的地方可以用master来替换,objects标识的区域为GIT的对象库，实际位于.git/objects目录中。  
 3. 当对工作区修改的文件执行add操作时，暂存区的目录树会刷新，同时工作区修改的文件内容会被写到对象库中的一个新对象中，而改对象的ID会被记录在暂存区的文件索引中  
@@ -149,7 +148,7 @@ committer wdl5i <wdl5i@163.com> 1473417382 +0800
 `git cat-file -t sha1` : 查看GIT对象ID类型，包括提交commit, 目录树tree， 文件内容  (blob)  
 `git cat-file -p sha1` : 根据sha1值，查看特定指交ID详情  
 这些对象都保存在.git/object目录下，ID的前2位作为目录名，后38位作为文件名
-![](/assets/4.png)
+![](http://i.imgur.com/t8wHXiK.png)
 Head与master的关系   
 在当前版本库中， HEAD, master, refs/for/master具有相同的指向。  
 执行find .git -name HEAD -o -name master  
@@ -175,7 +174,7 @@ author wdl5i <wdl5i@163.com> 1473487338 +0800
 committer wdl5i <wdl5i@163.com> 1473487338 +0800
 </pre>
 HEAD, master指向最新提交，根据提交的parent属性，可以追踪整个提交历史  
-![](/assets/5.png)
+![](http://i.imgur.com/T5gfgEN.png)
 .git/refs是保存引用的命名空间，其中.git/refs/heads目录下的引用就是分支，对于分支，可以采用正规长格式表示法，即refs/heads/master, 也可以去掉前面两级目录直接用master来表示。
 显示引用对应的提交ID：
 <code>  
@@ -203,7 +202,7 @@ tree目录树的sha1竹成算法： 树内容 + 树内容大小 执行sha1
 git reset [--soft | --mixed | --hard | -- merge | --keep] [-q][<commit>]
 </pre>  
 会重置引用，根据不同的参数选择，对暂存区和工作区进行重置
-![](/assets/6.png)
+![](http://i.imgur.com/P2u0mBb.png)
 --hard, 会执行上图所示1，2，3全部动作，即：  
 1. 替换引用的指向  
 2. 替换暂存区， 暂存区的内容与引用指向的目录树一致  
