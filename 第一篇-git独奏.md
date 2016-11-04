@@ -66,7 +66,7 @@ git clone algorithm algorithm-step-1
 git 工作区，暂存区， 版本库概念：
 
 1. **工作区**：就是你在电脑里能看到的目录。  
-2. **暂存区**：英文叫stage, 或index。一般存放在"git目录"下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。  
+2. **暂存区**：英文叫stage, 或index。一般存放在"git目录"下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。    
 3. **版本库**：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库, HEAD指针  
 `echo "Nice to meet you" >> welcome.txt`  
 ##理解GIT暂存区  
@@ -81,7 +81,7 @@ index e69de29..8654372 100644
 +Nice to meet you
 </pre>  
 二. 执行`git status -s`  
- M welcome.txt M前有一个空格
+ M welcome.txt M前有一个空格  
 三. 执行git add welcome.txt后再执行git diff  
  没有输出  
 四. 执行:
@@ -102,7 +102,7 @@ M welcome.txt
 `echo "BYE-BYE" >> welcome.txt`  
 `git status -s`  
 输出： MM welcome.txt 即现在工作区与暂存区相比文件有改动，暂存区和版本库的最新版本相比文件有改动
-![](http://i.imgur.com/q17yWwb.png)
+![](http://i.imgur.com/q17yWwb.png)  
 **git diff 显示工作目录与暂存区(index, stage)文件之间的差异**  
 **git diff HEAD 显示工作目录与git版本库当前分支最新版本（HEAD）之间的差异**  
 **git diff --cached (HEAD)或者git diff --staged (HEAD) 显示暂存区与git版本库当前分支最新版本(HEAD)之间的差异**  
