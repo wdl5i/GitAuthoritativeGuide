@@ -112,7 +112,7 @@ git根据.git/index文件中记录的(用于跟踪工作区文件)时间戳，�
 .git/index就是一个包含文件索引的目录树，像一个虚拟的工作区，记录了文件名和文件的状态信息(时间戳和文件长度等)。文件内容都没有存储在其中，而是保存在git对象库，即.git/objects目录中，文件索引建立了文件与对象库中对象实体的对应。 
 ![](http://i.imgur.com/qdUILqG.jpg)
 1. 图中左侧为工作区，右侧为版本库，版本库中标识为index的部分是暂存区，标识为Master的是master分支所代表的目录树  
-2. HEAD实际中是指向master分支的一个游标，所以图示中的命令中出现HEAD的地方可以用master来替换,objects标识的区域为GIT的对象库，实际位于.git/objects目录中。  
+2. HEAD实际中是指向master分支的一个游标，所以图示中的命令中出现HEAD的地方可以用master来替换，objects标识的区域为GIT的对象库，实际位于.git/objects目录中。  
 3. 当对工作区修改的文件执行add操作时，暂存区的目录树会刷新，同时工作区修改的文件内容会被写到对象库中的一个新对象中，而改对象的ID会被记录在暂存区的文件索引中  
 4. 当执行提交操作commit时，暂存区的目录树会写到版本库中，master分支也做相应更新，即Master最新指向的目录树就是提交时原暂存区的目录树  
 5. 当执行`git reset HEAD`时，暂存区的目录树会被重写，会被master分支指向的目录树替换，但是工作区不受影响  
@@ -131,8 +131,8 @@ git根据.git/index文件中记录的(用于跟踪工作区文件)时间戳，�
 **显示暂存区中目录树：`git ls-files -l -s`**  
 如果想像显示版本库中目录树一样显示暂存区的目录树，需要先将暂存区目录树写入到GIT对象库  
 **将暂存区目录树写入GIT对象库中：git write-tree**  
-显示已保存到GIT对象库中的GIT暂存区目录树：git ls-tree -l 暂存区目录树在GIT对象库中的ID
-![](/assets/3.png)
+显示已保存到GIT对象库中的GIT暂存区目录树：git ls-tree -l 暂存区目录树在GIT对象库中的ID  
+![](/assets/3.png)     
 **尽量不要使用git commit -a， 因为这样暂存区就失去了存在的意义**  
 保存当前工作进度： `git stash `  
 # GIT对象 #  
@@ -155,12 +155,12 @@ Head与master的关系
 `.git/HEAD`  
 `.git/refs/heads/master`  
 `.git/refs/remotes/origin/HEAD`  
-`.git/refs/remotes/origin/master`
+`.git/refs/remotes/origin/master`  
 `.git/logs/HEAD`  
 `.git/logs/refs/heads/master`  
 `.git/logs/refs/remotes/origin/HEAD`  
-`.git/logs/refs/remotes/origin/master`
-执行cat .git/HEAD
+`.git/logs/refs/remotes/origin/master`  
+执行cat .git/HEAD  
 ref: refs/heads/master 实际上指向.git/refs/heads/master  
 执行cat .git/refs/heads/master  
 ff2266a2ff65f19e3ece2540a5896649601d59fb 
